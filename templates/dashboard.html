@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoGuardian Dashboard</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#2e7d32,#81c784);
+    min-height:100vh;
+    padding:30px;
+}
+
+h1{
+    text-align:center;
+    color:white;
+    margin-bottom:30px;
+}
+
+.dashboard{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    padding:25px;
+    color:white;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+.card h2{
+    margin-bottom:15px;
+}
+
+.circle{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    background:conic-gradient(#00ff88 78%, #ffffff33 0);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:auto;
+    font-size:35px;
+    font-weight:bold;
+}
+
+.progress{
+    background:#ffffff33;
+    height:20px;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:10px;
+    margin-bottom:20px;
+}
+
+.bar{
+    height:100%;
+    background:#00ff88;
+}
+
+.counter{
+    font-size:40px;
+    text-align:center;
+    font-weight:bold;
+}
+
+.badges{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.badge{
+    background:#1b5e20;
+    padding:10px;
+    border-radius:10px;
+}
+
+.actions{
+    text-align:center;
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    color:white;
+    background:#1b5e20;
+    padding:15px 30px;
+    border-radius:30px;
+    margin:10px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+</style>
+</head>
+<body>
+
+<h1>🌍 EcoGuardian Dashboard</h1>
+
+<div class="dashboard">
+
+<div class="card">
+    <h2>Sustainability Score</h2>
+    <div class="circle">78%</div>
+</div>
+
+<div class="card">
+    <h2>Resource Usage</h2>
+
+    💧 Water Usage
+    <div class="progress">
+        <div class="bar" style="width:70%"></div>
+    </div>
+
+    ⚡ Electricity
+    <div class="progress">
+        <div class="bar" style="width:60%"></div>
+    </div>
+
+    ♻ Waste Reduction
+    <div class="progress">
+        <div class="bar" style="width:80%"></div>
+    </div>
+</div>
+
+<div class="card">
+    <h2>🔥 Green Streak</h2>
+    <div class="counter" id="streak">0</div>
+    <p style="text-align:center;">Days of Eco Activity</p>
+</div>
+
+<div class="card">
+    <h2>🏅 Earned Badges</h2>
+
+    <div class="badges">
+        <div class="badge">💧 Water Saver</div>
+        <div class="badge">⚡ Energy Hero</div>
+        <div class="badge">♻ Recycling Champion</div>
+    </div>
+</div>
+
+</div>
+
+<div class="actions">
+
+<a href="/tracker" class="btn">
+📝 Start Tracking
+</a>
+
+<a href="/forest" class="btn">
+🌳 Virtual Forest
+</a>
+
+<a href="/badges" class="btn">
+🏅 View Badges
+</a>
+
+<a href="/impact" class="btn">
+📊 Community Impact
+</a>
+<a href="/future-message" class="btn">
+🌍 Future City 2050
+</a>
+
+</div>
+
+<div class="card">
+    <h3>📄 Eco Report</h3>
+    <a href="/report" class="btn">Generate</a>
+</div>
+
+<div class="card">
+    <h3>🧠 Eco Feedback AI</h3>
+    <a href="/feedback" class="btn">Open</a>
+</div>
+<div class="card">
+    <h3>🐦 Bird Report</h3>
+    <a href="/report-bird" class="btn">Open</a>
+</div>
+
+<div class="card">
+    <h3>📍 Risk Map</h3>
+    <a href="/risk-map" class="btn">View</a>
+</div>
+
+<div class="card">
+    <h3>🌳 Bird Corridors</h3>
+    <a href="/corridor" class="btn">Explore</a>
+</div>
+
+<div class="card">
+    <h3>🐦 Flight Simulator</h3>
+    <a href="/simulator" class="btn">Try</a>
+</div>
+
+<script>
+let count = 0;
+
+let interval = setInterval(() => {
+
+    if(count < 15){
+        count++;
+        document.getElementById("streak").innerHTML = count;
+    }else{
+        clearInterval(interval);
+    }
+
+},100);
+</script>
+
+</body>
+</html>

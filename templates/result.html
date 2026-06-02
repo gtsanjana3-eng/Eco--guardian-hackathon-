@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eco Results</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#2e7d32,#81c784);
+    min-height:100vh;
+    padding:30px;
+    color:white;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+}
+
+.score{
+    font-size:55px;
+    font-weight:bold;
+}
+
+.value{
+    font-size:35px;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.recommendations{
+    margin-top:30px;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    padding:25px;
+}
+
+.recommendations ul{
+    margin-top:15px;
+    padding-left:20px;
+}
+
+.recommendations li{
+    margin-bottom:10px;
+}
+
+.buttons{
+    text-align:center;
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    color:white;
+    background:#1b5e20;
+    padding:15px 25px;
+    border-radius:30px;
+    margin:10px;
+}
+</style>
+</head>
+<body>
+
+<h1>🌍 Sustainability Report</h1>
+
+<div class="container">
+
+<div class="grid">
+
+<div class="card">
+    <h2>📊 Sustainability Score</h2>
+    <div class="score">{{ score }}%</div>
+</div>
+
+<div class="card">
+    <h2>🌍 Carbon Footprint</h2>
+    <div class="value">{{ carbon }}</div>
+    <p>kg CO₂ Estimate</p>
+</div>
+
+<div class="card">
+    <h2>🌳 Tree Growth Stage</h2>
+    <div class="value">{{ tree_stage }}</div>
+</div>
+
+<div class="card">
+    <h2>🏅 Badge Earned</h2>
+    <div class="value">{{ badge }}</div>
+</div>
+
+</div>
+
+<div class="recommendations">
+
+<h2>💡 Eco Recommendations</h2>
+
+<ul>
+{% for item in recommendations %}
+<li>{{ item }}</li>
+{% endfor %}
+</ul>
+
+</div>
+
+<div class="buttons">
+
+<a href="/forest" class="btn">
+🌳 View Virtual Forest
+</a>
+
+<a href="/badges" class="btn">
+🏅 View Badges
+</a>
+
+<a href="/impact" class="btn">
+📊 Impact Dashboard
+</a>
+
+<a href="/dashboard" class="btn">
+🏠 Dashboard
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>

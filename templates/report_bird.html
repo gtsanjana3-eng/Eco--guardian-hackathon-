@@ -1,0 +1,18 @@
+<h2>🐦 Report Bird Incident</h2>
+
+<form method="POST">
+    <input name="location" placeholder="Location" required>
+    <input name="issue" placeholder="Issue (collision, injury)" required>
+    <button>Submit</button>
+</form>
+
+{% if message %}
+<p>{{ message }}</p>
+{% endif %}
+
+<h3>Reports</h3>
+<ul>
+{% for r in reports %}
+    <li>{{ r.location }} - {{ r.issue }}</li>
+{% endfor %}
+</ul>

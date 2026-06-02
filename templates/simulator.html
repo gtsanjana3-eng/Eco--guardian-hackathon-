@@ -1,0 +1,15 @@
+<h2>🐦 Bird Flight Simulator</h2>
+
+<form method="POST">
+    <select name="area">
+        <option>City Center</option>
+        <option>Lake Area</option>
+        <option>Industrial Area</option>
+        <option>Residential Area</option>
+    </select>
+    <button>Simulate</button>
+</form>
+
+{% if path %}
+<p><b>Result:</b> {{ path }}</p>
+{% endif %}

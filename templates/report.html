@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eco Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<h1 style="text-align:center;">📄 Eco Impact Intelligence Report</h1>
+
+<div class="card" style="max-width:600px; margin:auto; margin-top:20px;">
+
+    <p><b>Date:</b> {{ date }}</p>
+
+    <h2>🌍 Eco Score: {{ score }}%</h2>
+    <h3>🏆 Level: {{ level }}</h3>
+
+    <p>🌫 Carbon Footprint: {{ carbon }} kg</p>
+
+    <h3>🏅 Badges Earned:</h3>
+    <ul>
+        {% for b in badges %}
+            <li>{{ b }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>🔮 Future Impact:</h3>
+    <p>{{ future }}</p>
+
+</div>
+
+<br>
+
+<div style="text-align:center;">
+    <a href="/dashboard" class="btn">⬅ Back</a>
+</div>
+
+</body>
+</html>

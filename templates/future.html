@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Future City Message</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<h1 style="text-align:center;">🌍 Future Message From Your City (2050)</h1>
+
+<div class="hero">
+
+    <form method="POST">
+
+        <label>Select City</label><br>
+        <select name="city" required>
+            <option value="">--Choose City--</option>
+            <option>Bengaluru</option>
+            <option>Delhi</option>
+            <option>Mumbai</option>
+            <option>Chennai</option>
+            <option>Hyderabad</option>
+        </select>
+
+        <br><br>
+
+        <label>Future Type</label><br>
+        <select name="future_type" required>
+            <option value="sustainable">🌿 Sustainable Future</option>
+            <option value="unsustainable">🌫️ Unsustainable Future</option>
+        </select>
+
+        <br><br>
+
+        <button class="btn">Generate Future Message</button>
+
+    </form>
+
+    {% if message %}
+
+    <div class="card" style="margin-top:20px;">
+
+        <h2>📍 {{ city }}</h2>
+        <h3>{{ message }}</h3>
+
+    </div>
+
+    {% endif %}
+
+    <br>
+
+    <a href="/dashboard" class="btn">⬅ Back</a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoGuardian</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+    url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e");
+    background-size:cover;
+    background-position:center;
+    min-height:100vh;
+    color:white;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 50px;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+}
+
+.hero{
+    text-align:center;
+    margin-top:100px;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:20px;
+    max-width:800px;
+    margin:auto;
+    margin-bottom:30px;
+}
+
+.btn{
+    text-decoration:none;
+    background:#2e7d32;
+    color:white;
+    padding:15px 35px;
+    border-radius:30px;
+    font-size:18px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#1b5e20;
+}
+
+.features{
+    margin-top:70px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+    padding:20px;
+}
+
+.card{
+    width:250px;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+    padding:20px;
+    border-radius:20px;
+    text-align:center;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">🌍 EcoGuardian</div>
+</nav>
+
+<div class="hero">
+
+    <h1>Protect Nature, Build a Sustainable Future</h1>
+
+    <p>
+        Track your environmental impact, earn eco badges,
+        grow a virtual forest, reduce carbon emissions,
+        and contribute towards a greener society.
+    </p>
+
+    <a href="/dashboard" class="btn">
+        Start Your Eco Journey 🌱
+    </a>
+
+</div>
+
+<div class="features">
+
+    <div class="card">
+        <h3>🌳 Virtual Forest</h3>
+        <p>Grow trees through sustainable actions.</p>
+    </div>
+
+    <div class="card">
+        <h3>🏅 Eco Badges</h3>
+        <p>Unlock achievements and rewards.</p>
+    </div>
+
+    <div class="card">
+        <h3>🤖 Eco Coach</h3>
+        <p>Get sustainability guidance instantly.</p>
+    </div>
+
+    <div class="card">
+        <h3>🌍 Impact Dashboard</h3>
+        <p>Measure your environmental contribution.</p>
+    </div>
+
+</div>
+
+</body>
+</html>

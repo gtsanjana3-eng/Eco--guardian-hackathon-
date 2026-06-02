@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eco Feedback AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<h1 style="text-align:center;">🌱 Eco Feedback AI</h1>
+
+<div class="hero">
+
+    <form method="POST">
+
+        <textarea name="message" rows="5" placeholder="Write your eco thoughts..." style="width:80%; padding:10px;"></textarea>
+
+        <br><br>
+
+        <button class="btn">Analyze</button>
+
+    </form>
+
+    {% if result %}
+
+        <div class="card" style="margin-top:20px;">
+
+            <h2>{{ result }}</h2>
+
+            <p><b>Sentiment:</b> {{ sentiment }}</p>
+            <p><b>Category:</b> {{ category }}</p>
+            <p><b>Suggestion:</b> {{ suggestion }}</p>
+
+        </div>
+
+    {% endif %}
+
+    <br>
+
+    <a href="/dashboard" class="btn">⬅ Back</a>
+
+</div>
+
+</body>
+</html>

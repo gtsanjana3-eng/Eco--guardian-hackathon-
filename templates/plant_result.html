@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plant Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="hero">
+
+    <h1>🌱 Sapling Planted!</h1>
+
+    <h2>🔥 Streak: {{ streak }} days</h2>
+    <h2>🌱 Total Saplings: {{ saplings }}</h2>
+    <h2>🏆 Badge: {{ badge }}</h2>
+
+    <a href="/dashboard" class="btn">Back</a>
+
+</div>
+
+</body>
+</html>
