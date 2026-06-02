@@ -1,0 +1,10 @@
+<h2>AI Eco Advisor</h2>
+
+<form method="POST">
+Issue: <input name="issue">
+<button>Get Advice</button>
+</form>
+
+{% if advice %}
+<h3>{{ advice }}</h3>
+{% endif %}

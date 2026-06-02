@@ -1,0 +1,7 @@
+<h2>City Pollution Analysis</h2>
+
+<ul>
+{% for city,value in cities.items() %}
+<li>{{ city }} → AQI {{ value }}</li>
+{% endfor %}
+</ul>

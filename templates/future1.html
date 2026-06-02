@@ -1,0 +1,16 @@
+<h2>Future Simulation</h2>
+
+<form method="POST">
+City: <input name="city"><br>
+
+<select name="mode">
+<option value="sustainable">Sustainable</option>
+<option value="unsustainable">Unsustainable</option>
+</select>
+
+<button>Generate</button>
+</form>
+
+{% if message %}
+<h3>{{ message }}</h3>
+{% endif %}

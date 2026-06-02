@@ -430,6 +430,96 @@ def simulator():
     return render_template('simulator.html', path=path)
 
 
+# 🌍 Personal Carbon Tracker
+@app.route('/carbon', methods=['GET', 'POST'])
+def carbon():
+
+    score = None
+    suggestion = None
+
+    if request.method == 'POST':
+        electricity = float(request.form['electricity'])
+        transport = float(request.form['transport'])
+        waste = float(request.form['waste'])
+
+        score = electricity*0.5 + transport*0.8 + waste*0.6
+
+        if score < 5:
+            suggestion = "🌿 Low carbon footprint"
+        elif score < 10:
+            suggestion = "⚡ Moderate footprint"
+        else:
+            suggestion = "🚨 High carbon footprint"
+
+    return render_template('carbon.html', score=score, suggestion=suggestion)
+
+
+# 🐦 Wildlife Protection System
+@app.route('/wildlife')
+def wildlife():
+
+    alerts = [
+        "🐦 Bird collision risk near transformers",
+        "🌳 Safe nesting zones in parks",
+        "⚡ Power lines danger zones"
+    ]
+
+    return render_template('wildlife.html', alerts=alerts)
+
+
+# 🏙 Smart City Pollution Analysis
+@app.route('/pollution')
+def pollution():
+
+    cities = {
+        "Bengaluru": 65,
+        "Delhi": 180,
+        "Mumbai": 120,
+        "Chennai": 90
+    }
+
+    return render_template('pollution.html', cities=cities)
+
+
+# 🤖 AI Eco Advisor
+@app.route('/advisor', methods=['GET', 'POST'])
+def advisor():
+
+    advice = None
+
+    if request.method == 'POST':
+        issue = request.form['issue'].lower()
+
+        if "water" in issue:
+            advice = "💧 Save water using buckets"
+        elif "plastic" in issue:
+            advice = "♻ Use reusable items"
+        elif "electricity" in issue:
+            advice = "⚡ Switch off unused appliances"
+        else:
+            advice = "🌿 Plant trees"
+
+    return render_template('advisor.html', advice=advice)
+
+
+# 🌍 Future Simulation
+@app.route('/future', methods=['GET', 'POST'])
+def future():
+
+    message = None
+
+    if request.method == 'POST':
+        city = request.form['city']
+        mode = request.form['mode']
+
+        if mode == "sustainable":
+            message = f"🌿 {city} 2050: Clean, green, safe city"
+        else:
+            message = f"🌫️ {city} 2050: Pollution, heat, water shortage"
+
+    return render_template('future.html', message=message)
+
+
 # -------------------------
 # RUN SERVER
 # -------------------------

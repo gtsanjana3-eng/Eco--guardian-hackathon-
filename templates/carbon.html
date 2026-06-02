@@ -1,0 +1,13 @@
+<h2>Carbon Tracker</h2>
+
+<form method="POST">
+Electricity: <input name="electricity"><br>
+Transport: <input name="transport"><br>
+Waste: <input name="waste"><br>
+<button>Calculate</button>
+</form>
+
+{% if score %}
+<h3>Score: {{ score }}</h3>
+<h3>{{ suggestion }}</h3>
+{% endif %}
