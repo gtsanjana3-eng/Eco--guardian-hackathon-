@@ -520,6 +520,20 @@ def future():
     return render_template('future.html', message=message)
 
 
+@app.route('/report')
+def report2():
+
+    report_data = {
+        "carbon": "Moderate footprint (reduce transport usage)",
+        "pollution": "Delhi: High risk, Bengaluru: Moderate",
+        "wildlife": "Bird collision zones near power lines",
+        "ai_advice": "Switch to renewable energy + reduce plastic usage",
+        "future_risk": "2050: Water shortage risk if usage continues"
+    }
+
+    return render_template("report.html", report=report_data)
+
+
 # -------------------------
 # RUN SERVER
 # -------------------------
